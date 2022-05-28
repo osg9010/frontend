@@ -606,18 +606,29 @@
   <input type="reset" name="이름" value="취소">
   ```
 ### 6. 여러 값 표현 태그
+* 사용자에게 여러 개의 데이터를 보여주고 사용자가 선택할 수 있도록 하는 태그이다.
 #### 6.1. select 태그
 * 드롭 다운을 이용해서 여러 개의 데이터 목록 중에 하나의 값을 선택하도록 하는 태그이다.
 * option 태그를 사용해서 데이터 목록을 추가한다.
   ```html
   <label for="national">국적 : </label>
-  
+
   <select name="national" id="national">
     <option value="ko">한국</option>
     <option value="ch">중국</option>
     <option value="jp">일본</option>
   </select>
   ```
+* select 태그 속성
+  |속성|설명|
+  |--|--|
+  |size|드롭 다운 목록의 개수를 지정한다. (기본값: 1)|
+  |multiple|Ctrl 키를 누른 상태로 여러 개의 드롭 다운 목록을 선택할 수 있도록 한다.|
+* option 태그 속성
+  |속성|설명|
+  |--|--|
+  |value|옵션을 선택했을 때 서버로 전송된 값을 지정한다.|
+  |selected|드롭 다운 목록 중에 기본적으로 선택되어 있는 옵션을 지정한다.|
 #### 6.2. datalist 태그
 * 텍스트 필드에서 데이터 목록 중에 하나의 값을 선택하도록 만들어주는 태그이다.
 * option 태그를 사용해서 데이터 목록을 추가한다.
@@ -654,30 +665,3 @@
   ```html
   <meter min="0" max="100" value="90">
   ```
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  

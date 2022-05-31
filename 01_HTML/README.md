@@ -238,12 +238,12 @@
 * rowspan, colspan 속성은 셀을 합치는 속성으로 td 태그나 th 태그에서 작성 가능한 속성이다.
   ``` html
   <table>
-  	<tr>
-  	  <td colspan="2">내용1</td>
-  	</tr>
-  	<tr>
-  	  <td>내용2</td>
-  	  <td>내용3</td>
+    <tr>
+      <td colspan="2">내용1</td>
+    </tr>
+    <tr>
+      <td>내용2</td>
+      <td>내용3</td>
     </tr>
   </table>
   ```

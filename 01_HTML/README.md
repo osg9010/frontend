@@ -434,7 +434,7 @@
   <label>아이디 : <input type="text"></label>
 
   <!-- 레이블 태그와 폼 요소를 따로 만들고 연결하는 방법 -->
-  <label for="password"></label>
+  <label for="password">패스워드</label>
   <input type="password" id="password">
   ```
 ### 4. fieldset, legend 태그

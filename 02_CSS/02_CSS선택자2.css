@@ -1,0 +1,122 @@
+/* * {
+    color: green;
+} */
+
+/* 속성 선택자 */
+/* div 중에 name 속성을 가지고 있는 태그 선택 */
+/* div[name] {
+    background-color: orange;
+} */
+
+/* div 중에 name 속성값이 name1과 일치하는 태그 선택 */
+div[name=name1] {
+    background-color: orangered;
+}
+
+/* div 중에 name 속성 안에 name1이 포함되어 있는 태그 선택 (단, 속성값은 띄어쓰기로 구분) */
+div[name~=name1] {
+    background-color: yellow;
+}
+
+/* div 중에 class 속성 안에 class가 포함되어 있는 태그 선택 (단, 속성값은 -로 구분) */
+div[class|=class] {
+    background-color: aqua;
+}
+
+/* div 중에 name 속성이 name로 시작되는 태그 선택 */
+div[name^=name] {
+    background-color: blue;
+}
+
+/* div 중에 class 속성이 class로 끝나는 태그 선택 */
+div[class$=class] {
+    color: white;
+}
+
+/* div 중에 class 속성 중에 i를 포함하는 태그 선택 */
+div[class*=i] {
+    background-color: greenyellow;
+    color: red;
+}
+
+/* 클래스가 div-class인 것 중 name 속성값에 name3 포함되어 있는 태그 선택 (단, 속성값이 띄어쓰기로 구분) */
+.div-class[name~=name3] {
+/* .div-class[name="name3 name1"] { */
+    background-color: pink;
+}
+
+/* 자식 선택자와 후손(하위) 선택자 */
+#test1>h4 {
+    background-color: orange;
+}
+
+#test1>ul>h4 {
+    background-color: purple;
+}
+
+#test1>ul>li {
+    background-color: coral;
+}
+
+#test1 li {
+    color: red;
+}
+
+/* 동위 선택자 */
+#div-test {
+    background-color: red;
+}
+
+#div-test+div {
+    background-color: green;
+}
+
+/* #div-test~div {
+    background-color: greenyellow;
+} */
+
+/* 반응 선택자 */
+#active-test, #hover-test {
+    background-color: yellowgreen;
+    width: 300px;
+    height: 300px;
+}
+
+#active-test:active {
+    background-color: yellow;
+}
+
+#hover-test:hover {
+    background-color: hotpink;
+    cursor: pointer;
+}
+
+#userId:focus {
+    border: 4px solid red;
+}
+
+/* 상태 선택자 */
+input[type=checkbox]:checked {
+    width: 30px;
+    height: 30px;
+}
+
+input[type=checkbox]:checked+label {
+    font-size: 30px;
+}
+
+button:enabled {
+    background-color: aquamarine;
+}
+
+button:disabled {
+    color: red;
+}
+
+option:enabled {
+    background-color: pink;
+}
+
+option:disabled {
+    background-color: gray;
+}

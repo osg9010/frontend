@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Dokdo&display=swap');
+/* * {
+    color: blue;
+} */
+/* font-family */
+/* body {
+    font-family: 'hack';
+} */
+
+#ff1 {
+    font-family: "궁서체";
+}
+
+#ff1 {
+    font-family: "궁서체";
+}
+
+#ff3 {
+    font-family: "없는글꼴", "hack";
+}
+
+#wf {
+    font-family: 'Dokdo', cursive;
+    font-size: 3em;
+}
+
+/* font-size */
+#fs1 {
+    font-size: 30px;
+    /* font-size: 20pt; */
+}
+
+#fs2 {
+    font-size: 3em;
+}
+
+#fs2>span {
+    /* font-size: 1em; */
+    font-size: 1rem;
+}
+
+#fs3 {
+    font-size: 150%; 
+    /* font-size: 1.5em;  */
+}
+
+/* font-weight */
+#fw1 {
+    /* font-weight: 700; */
+    font-weight: bold;
+}
+
+#fw2 {
+    font-weight: lighter;
+}
+
+#fw3 {
+    font-weight: bolder;
+}
+
+/* font-style */
+#fst1 {
+    font-style: italic;
+}
+
+#fst2 {
+    font-style: oblique;
+}
+
+/* font-variant */
+#fv {
+    font-size: 2em;
+    font-variant: small-caps;
+}
+
+/* color */
+#c-name {
+    color: red;
+}
+
+#c-16 {
+    color: #f75bf7;
+    /* color: #f0f; */
+}
+
+#c-rgb {
+    color: rgb(0,255,255);
+}
+
+#c-rgba {
+    color: rgba(255, 0, 0, .3)
+}
+
+/* text-decoration */
+#td1 {
+    text-decoration: underline;
+}
+
+#td2 {
+    text-decoration: line-through;
+}
+
+#td3 {
+    text-decoration: overline;
+}
+
+#td4 {
+    text-decoration: none;
+}
+
+/* text-transform */
+#tt1 {
+    text-transform: capitalize;
+}
+
+#tt2 {
+    text-transform: uppercase;
+}
+
+#tt3 {
+    text-transform: lowercase;
+}

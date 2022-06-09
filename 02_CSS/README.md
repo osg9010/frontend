@@ -640,7 +640,7 @@
 * 테두리 스타일을 지정하는 속성이다.
   ```css
   선택자 {
-    border-style: none or ;
+    border-style: none or ... or solid ;
   }
   ```
   |속성값|설명|

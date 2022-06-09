@@ -1,0 +1,15 @@
+/* * {
+    color: green;
+} */
+
+/* 박스 모델 */
+/* width, height */
+.size-test {
+    border: 3px solid red
+}
+
+#fixed-size {
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+}

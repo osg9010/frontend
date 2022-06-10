@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>색상 스타일</title>
+    <style>
+        /* body {
+            background-color: indianred;
+        } */
+
+        #bg-color {
+            width: 50%;
+            /* background-color: indianred; */
+            /* background-color: #cf5044; */
+            /* background-color: #f4c; */
+            /* background-color: rgb(0, 255, 0); */
+            /* background-color: rgba(0, 255, 0, 0.3); */
+            /* background-color: hsl(300, 100%, 50%); */
+            background-color: hsla(300, 100%, 50%, 0.3);
+        }
+
+        .bg-clip {
+            width: 30%;
+            margin: 30px;
+            padding: 30px;
+            border: 15px dashed rgba(0, 0, 0, .3);
+            background-color: hsla(300, 100%, 50%, 0.3);
+        }
+
+        #bg-clip1 {
+            background-clip: border-box;
+        }
+
+        #bg-clip2 {
+            background-clip: padding-box;
+        }
+
+        #bg-clip3 {
+            background-clip: content-box;
+        }
+
+        #bg-img {
+            width: 80%;
+            height: 750px;
+            padding: 50px;
+            border: 15px solid rgba(0, 0, 0, .3);
+            background-image: url('https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20220506_286%2F16518188745756Lu6k_JPEG%2F52954654299873954_1321520556.jpeg&type=sc960_832');
+            /* background-image: url('../resources/image/bgsample.PNG'); */
+
+            /* 이미지 반복 */
+            /* background-repeat: repeat; */
+            /* background-repeat: repeat-x; */
+            /* background-repeat: repeat-y; */
+            background-repeat: no-repeat;
+
+            /* 이미지 크기 설정 */
+            /* background-size: auto; */
+            /* background-size: contain; */
+            /* background-size: cover; */
+            /* background-size: 550px 400px; */
+            /* background-size: 100% 100%; */
+
+            /* 이미지 위치 설정 */
+            /* background-position: left top; */
+            /* background-position: right top; */
+            /* background-position: center top; */
+            /* background-position: left center; */
+            /* background-position: center center; */
+            /* background-position: right center; */
+            /* background-position: left bottom; */
+            /* background-position: center bottom; */
+            /* background-position: right bottom; */
+            /* background-position: 50px 50px; */
+            /* background-position: 30% 30%; */
+
+            /* 이미지 배치 기준 설정 */
+            /* background-origin: padding-box; */
+            /* background-origin: border-box; */
+            /* background-origin: content-box; */
+
+            /* 이미지를 고정하도록 설정 */
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <h1>색상 스타일</h1>
+    <h2>background-color</h2>
+    <div id="bg-color">
+        국·내외 선사들이 한국-일본항로에서 벌인 담합행위 관련해 공정거래위원회가 800억원 과징금을 부과한 것과 달리 한국-중국항로의 담합행위에 대해선 시정명령 조치만 내려졌다. 공정위는 "우리나라와 중국 정부 간 해운협정으로 화물 공급량이 관리돼 화주들의 피해규모가 작았다"고 설명했다. 그러나 일각에선 이번 조사에 직접적으로 우려를 표한 중국 정부와의 외교적 갈등 가능성을 고려한 것이 아니냐는 분석이 나온다.
+        공정위는 9일 한-일 항로에서의 운임 담합행위와 관련해 고려해운 146억원, 남성해운 108억원 등 15개 선사에 과징금 총 800억원 부과와 시정명령 조치를 내렸다고 밝혔다. 지난 1월 한-동남아 항로의 운임 담합행위를 제재(과징금 962억원)한 데 이은 것이다.            
+    </div>
+    
+    <h2>background-clip</h2>
+    <div class="bg-clip" id="bg-clip1">
+        국·내외 선사들이 한국-일본항로에서 벌인 담합행위 관련해 공정거래위원회가 800억원 과징금을 부과한 것과 달리 한국-중국항로의 담합행위에 대해선 시정명령 조치만 내려졌다. 공정위는 "우리나라와 중국 정부 간 해운협정으로 화물 공급량이 관리돼 화주들의 피해규모가 작았다"고 설명했다. 그러나 일각에선 이번 조사에 직접적으로 우려를 표한 중국 정부와의 외교적 갈등 가능성을 고려한 것이 아니냐는 분석이 나온다.
+        공정위는 9일 한-일 항로에서의 운임 담합행위와 관련해 고려해운 146억원, 남성해운 108억원 등 15개 선사에 과징금 총 800억원 부과와 시정명령 조치를 내렸다고 밝혔다. 지난 1월 한-동남아 항로의 운임 담합행위를 제재(과징금 962억원)한 데 이은 것이다.            
+    </div>
+
+    <div class="bg-clip" id="bg-clip2">
+        국·내외 선사들이 한국-일본항로에서 벌인 담합행위 관련해 공정거래위원회가 800억원 과징금을 부과한 것과 달리 한국-중국항로의 담합행위에 대해선 시정명령 조치만 내려졌다. 공정위는 "우리나라와 중국 정부 간 해운협정으로 화물 공급량이 관리돼 화주들의 피해규모가 작았다"고 설명했다. 그러나 일각에선 이번 조사에 직접적으로 우려를 표한 중국 정부와의 외교적 갈등 가능성을 고려한 것이 아니냐는 분석이 나온다.
+        공정위는 9일 한-일 항로에서의 운임 담합행위와 관련해 고려해운 146억원, 남성해운 108억원 등 15개 선사에 과징금 총 800억원 부과와 시정명령 조치를 내렸다고 밝혔다. 지난 1월 한-동남아 항로의 운임 담합행위를 제재(과징금 962억원)한 데 이은 것이다.            
+    </div>
+
+    <div class="bg-clip" id="bg-clip3">
+        국·내외 선사들이 한국-일본항로에서 벌인 담합행위 관련해 공정거래위원회가 800억원 과징금을 부과한 것과 달리 한국-중국항로의 담합행위에 대해선 시정명령 조치만 내려졌다. 공정위는 "우리나라와 중국 정부 간 해운협정으로 화물 공급량이 관리돼 화주들의 피해규모가 작았다"고 설명했다. 그러나 일각에선 이번 조사에 직접적으로 우려를 표한 중국 정부와의 외교적 갈등 가능성을 고려한 것이 아니냐는 분석이 나온다.
+        공정위는 9일 한-일 항로에서의 운임 담합행위와 관련해 고려해운 146억원, 남성해운 108억원 등 15개 선사에 과징금 총 800억원 부과와 시정명령 조치를 내렸다고 밝혔다. 지난 1월 한-동남아 항로의 운임 담합행위를 제재(과징금 962억원)한 데 이은 것이다.            
+    </div>
+
+    <h2>배경 이미지</h2>
+    <div id="bg-img"></div>
+
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+</body>
+</html>

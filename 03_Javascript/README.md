@@ -432,3 +432,119 @@
 
   console.log(person.getName()); // 홍길동
   ```
+## BOM
+### 1. BOM(BrowserObjectModel)
+* 브라우저와 관련된 객체들을 BOM(BrowserObjectModel)이라고 한다.
+### 2. window 객체
+* 브라우저 창에 대한 설정을 하는 가장 최상위 객체이다.
+* 브라우저가 실행될 때 가장 먼저 생성되며 하위에 브라우저 각 요소에 해당하는 객체가 만들어진다.
+### 3. screen 객체
+* 사용자의 디스플레이에 대한 정보를 가진 객체이다.
+### 4. location 객체
+* 브라우저의 주소 표시줄(URL)과 관련된 객체로 주소와 관련된 정보를 가진 객체이다.
+### 5. navigator 객체
+* 브라우저에 대한 정보를 가지는 객체로 고객에 대한 정보를 분석할 때, 브라우저별로 다른 동작을 해야 할 때 사용된다.
+### 6. history
+* 브라우저에서 이동한 문서의 내역을 관리하는 객체이다.
+## DOM
+### 1. DOM(DocumentObjectModel)
+* HTML 문서의 태그들을 객체로 생성하고 객체들의 관계(상/하위)에 따라 트리 자료구조로 구성한 객체를 DOM(DocumentObjectModel) 또는 DOM 트리라고 한다.
+* document 객체는 window 객체의 하위 객체로 DOM 트리의 가장 최상위 객체이다.
+* HTML 태그(요소)를 객체로 생성해 놓은 것을 요소 노드라 한다.
+* HTML 태그(요소)의 텍스트를 객체로 생성해 놓은 것을 텍스트 노드라 한다.
+### 2. 노드 검색
+#### 2.1. id로 검색
+* 태그의 id 속성 값을 이용해서 요소(Element) 객체를 얻어온다.
+  ``` js
+  let 변수 = document.getElementById("아이디");
+  ```
+#### 2.2. name으로 검색
+* 태그의 name 속성 값을 이용해서 요소(Element) 객체를 배열에 담아 얻어온다.
+* 동일한 이름의 태그가 여러 개 존재할 수 있기 때문에 배열로 리턴한다.
+  ``` js
+  let 변수 = document.getElelemtsByName("이름");
+  ```
+#### 2.3. class로 검색
+* 태그의 class 속성 값을 이용해서 요소(Element) 객체를 배열에 담아 얻어온다.
+* 동일한 class 속성 값을 갖는 태그가 여러 개 존재할 수 있기 때문에 배열로 리턴한다.
+  ``` js
+  let 변수 = document.getElementsByClassName("클래스");
+  ```
+#### 2.4. 태그로 검색
+* 태그 명을 이용해서 요소(Element) 객체를 배열에 담아 얻어온다.
+* 동일한 태그가 여러 개 존재할 수 있기 때문에 배열로 리턴한다.
+  ``` js
+  let 변수 = document.getElementsByTagName("태그");
+  ```
+#### 2.5. CSS 선택자를 이용한 검색
+* CSS 선택자로 요소(Element) 객체를 얻어온다. 
+  ```js
+  let 변수 = document.querySelector('#아이디');
+  ```
+* CSS 선택자를 만족하는 요소가 여러 개 존재하는 경우 querySelectorAll() 메소드를 사용한다.
+  ```js
+  let 변수 = document.querySelectorAll('.클래스');
+  ```
+### 3. 노드 생성
+#### 3.1. 요소 노드 생성
+* 요소 노드를 생성할 때는 createElement() 메소드를 사용한다.
+  ```js
+  let element = document.createElement('태그');
+  ```
+#### 3.2. 텍스트 노드 생성
+* 텍스트 노드를 생성할 때는 createTextNode() 메소드를 사용한다.
+  ```js
+  let textNode = document.createTextNode('안녕하세요.');
+  ```
+#### 3.3. innerHTML 프로퍼티
+* innerHTML 프로퍼티는 요소 노드 내에 포함된 모든 HTML을 문자열로 가지고 있다.
+* 요소 노드의 innerHTML 프로퍼티에 문자열을 대입하면 모든 자식 노드가 제거되고 할당한 문자열에 포함되어 있는 문자열이 자식 노드로 DOM에 반영된다.
+  ```js
+  let element = document.createElement('태그');
+
+  element.innerHTML = '<span>hello</span>';
+  ```
+### 4. 노드 추가/삭제
+#### 4.1. 노드 추가
+* HTML 문서에 자바스크립트로 생성한 요소 노드를 추가할 때는 appendChild() 메소드를 사용한다.
+  ```js
+  let element = document.createElement('태그');
+
+  document.getElementById('id').appendChild(element);
+  ```
+#### 4.2. 노드 삭제
+* HTML 문서에 작성된 요소를 제거할 때는 removeChild() 메소드를 사용한다.
+  ```js
+  let element = document.getElementById('태그');
+
+  document.removeChild(element);
+  ```
+## 이벤트(Event)
+### 1. 이벤트(Event)
+* 브라우저에서 사용자가 하는 모든 행위(마우스 클릭, 키보드 입력 등)를 이벤트(Event)라 한다.
+* 자바스크립트를 사용하여 브라우저에서 발생하는 이벤트에 대해 특정 기능을 수행하도록 설정할 수 있다.
+### 2. 이벤트 설정 방법
+#### 2.1. 인라인 방식
+* HTML 태그에 이벤트 핸들러 속성을 이용하여 직접 자바스크립트 코드를 작성하는 방법이다.
+  ```html
+  <button onclick="수행 코드;">버튼</button>
+  ```
+#### 2.2. 이벤트 핸들러 프로퍼티 방식
+* 요소가 가지고 있는 이벤트 속성에 이벤트 핸들러를 설정하는 방법이다.
+  ```js
+  let button = document.getElementById('btn');
+
+  button.onclick = function{
+    // 수행 코드
+  }
+  ```
+#### 2.3. addEventListener() 메소드 방식
+* W3C에서 공식적으로 권장하는 이벤트 지정 방식으로 addEventListener() 메소드를 통해 이벤트 핸들러를 설정하는 방법이다.
+* 하나의 이벤트에 대해 여러 개의 이벤트 핸들러를 등록할 수 있다.
+  ```js
+  let button = document.getElementById('btn');
+
+  button.addEventListener('click', function() {
+    // 수행 코드
+  },[true or false]);
+  ```

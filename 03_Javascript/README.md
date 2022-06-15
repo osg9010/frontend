@@ -34,18 +34,18 @@
 * window.alert() 메소드를 사용하여 브라우저 화면상에 알림 창을 출력할 수 있다.
 * window.console.log() 메소드를 사용하여 개발자 도구의 콘솔에 값을 출력할 수 있다.
 ### 4. HTML 태그 접근
-#### 4.1. document.getElementById()
+#### 4.1. id로 검색
 * 태그의 id 속성 값을 이용해서 요소(Element) 객체를 얻어온다.
   ``` js
     var 변수 = document.getElementById("아이디명");
   ```
-#### 4.2. document.getElementsByName()
+#### 4.2. name으로 검색
 * 태그의 name 속성 값을 이용해서 요소(Element) 객체를 배열에 담아 얻어온다.
 * 동일한 이름의 태그가 여러 개 존재할 수 있기 때문에 배열로 리턴한다.
   ``` js
     var 변수 = document.getElelemtsByName("이름");
   ```
-#### 4.3. document.getElementsByTagName()
+#### 4.3. 태그로 검색
 * 태그 명을 이용해서 요소(Element) 객체를 배열에 담아 얻어온다.
 * 동일한 태그가 여러 개 존재할 수 있기 때문에 배열로 리턴한다.
   ``` js

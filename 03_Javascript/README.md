@@ -45,11 +45,26 @@
   ``` js
     var 변수 = document.getElelemtsByName("이름");
   ```
-#### 4.3. 태그로 검색
+#### 4.3. class로 검색
+* 태그의 class 속성 값을 이용해서 요소(Element) 객체를 배열에 담아 얻어온다.
+* 동일한 class 속성 값을 갖는 태그가 여러 개 존재할 수 있기 때문에 배열로 리턴한다.
+  ``` js
+    let 변수 = document.getElementsByClassName("클래스");
+  ```
+#### 4.4. 태그로 검색
 * 태그 명을 이용해서 요소(Element) 객체를 배열에 담아 얻어온다.
 * 동일한 태그가 여러 개 존재할 수 있기 때문에 배열로 리턴한다.
   ``` js
-    var 변수 = document.getElementsByTagName("태그");
+    let 변수 = document.getElementsByTagName("태그");
+  ```
+#### 4.5. CSS 선택자를 이용한 검색
+* CSS 선택자로 요소(Element) 객체를 얻어온다. 
+  ```js
+  let 변수 = document.querySelector('#아이디');
+  ```
+* CSS 선택자를 만족하는 요소가 여러 개 존재하는 경우 querySelectorAll() 메소드를 사용한다.
+  ```js
+  let 변수 = document.querySelectorAll('.클래스');
   ```
 ## 기본 문법
 ### 1. 주석(Comment)

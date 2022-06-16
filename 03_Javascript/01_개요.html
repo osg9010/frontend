@@ -214,11 +214,19 @@
 
     <script>
         function readValue() {
-            alert('버튼 클릭');
+            var input = document.getElementById('userName');
+            var name = input.value;
+
+            if(name.trim() == '') {
+                alert('이름을 입력하세요.');
+            } else {
+                document.getElementById('div4').innerHTML = '<b>' + name + '</b>'
+            }
+
+            input.value = '';
+            input.focus();
         }
     </script>
-
-
 
     <br><br><br><br><br><br>
     <br><br><br><br><br><br>

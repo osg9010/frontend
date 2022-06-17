@@ -99,7 +99,9 @@ function typeTest() {
         name: '문인수',
         age: 20,
         height: 183.2,
-        hobbies: ['축구', '야구', '농구']
+        // hobbies: ['축구', '야구', '농구']
+        // hobbies: hobbies
+        hobbies
     };
     let func = function (x, y) {
         return x + y;
@@ -117,4 +119,98 @@ function typeTest() {
     div1.innerHTML += `hobbies : ${hobbies}, type : ${typeof(hobbies)}<br>`;
     div1.innerHTML += `user : ${user}, type : ${typeof(user)}<br>`;
     div1.innerHTML += `func : ${func}, type : ${typeof(func)}<br>`;
+}
+
+// 3. 데이터 형변환
+// 1) 문자열과 숫자의 '+' 연산
+function plusTest() {
+    let result1 = 7 + 7; // 14
+    let result2 = 7 + '7'; // 77
+    let result3 = '7' + 7; // 77
+    let result4 = '7' + '7'; // 77
+    let result5 = 7 + 7 + '7'; // 147
+    let result6 = 7 + '7' + 7;  // 777
+    let result7 = 7 * '7'; // 49
+    let result8 = '7' - 3; // 4
+    let result9 = 4 / '2' + 3;
+    let result10 = '2' * '7';
+    let result11 = 'a' * '7';
+    let div2 = document.getElementById('div2');
+
+    div2.innerHTML = '<b>Hello</b><br>';
+    div2.innerHTML += `result1 : ${result1}<br>`;
+    div2.innerHTML += `result2 : ${result2}<br>`;
+    div2.innerHTML += `result3 : ${result3}<br>`;
+    div2.innerHTML += `result4 : ${result4}<br>`;
+    div2.innerHTML += `result5 : ${result5}<br>`;
+    div2.innerHTML += `result6 : ${result6}<br>`;
+    div2.innerHTML += `result7 : ${result7}<br>`;
+    div2.innerHTML += `result8 : ${result8}<br>`;
+    div2.innerHTML += `result9 : ${result9}<br>`;
+    div2.innerHTML += `result10 : ${result10}<br>`;
+    div2.innerHTML += `result11 : ${result11}<br>`;
+}
+
+// 2) 형변환 함수
+function castingTest() {
+    let div3 = document.getElementById('div3');
+
+    // 문자열 -> 숫자
+    div3.innerHTML = '<b>Hello</b><br>';
+    div3.innerHTML += `${Number('3')}, type: ${typeof(Number('3'))}<br>` ;
+    div3.innerHTML += `${parseInt('3')}, type: ${typeof(parseInt('3'))}<br>`;
+    div3.innerHTML += `${parseInt('0xff', 16)}, type: ${typeof(parseInt('0xff', 16))}<br>`;
+    div3.innerHTML += `${parseFloat('3')}, type: ${typeof(parseFloat('3'))}<br>` ;
+    
+    // 숫자 -> 문자열
+    div3.innerHTML += `${String(3)}, type: ${typeof(String(3))}<br>` ;
+}
+
+// 4. 연산자
+// "==" 연산자와 "===" 연산자
+function opTest() {
+    let div4 = document.getElementById('div4');
+
+    div4.innerHTML = '"==" 연산자 테스트<br>';
+    div4.innerHTML += `'7' == 7 : ${'7' == 7}<br>`;
+    div4.innerHTML += `'7' == '7' : ${'7' == '7'}<br>`;
+    div4.innerHTML += `7 == 7 : ${7 == 7}<br><br>`;
+
+    div4.innerHTML += '"===" 연산자 테스트<br>';
+    div4.innerHTML += `'7' === 7 : ${'7' === 7}<br>`;
+    div4.innerHTML += `'7' === '7' : ${'7' === '7'}<br>`;
+    div4.innerHTML += `7 === 7 : ${7 === 7}<br>`;
+}
+// 5. 제어문
+// 1) for in / for of 구문
+function forInTest() {
+    let div5 = document.getElementById('div5');
+    let arr = ['문인수', '홍길동', '이몽룡', '성춘향'];
+    let obj = {
+        name: '문인수',
+        age: 20,
+        job: '강사'
+    }
+    
+    for(let i = 0; i < arr.length; i++) {
+        div5.innerHTML += `${arr[i]} `;
+    }
+
+    div5.innerHTML += '<br><br>';
+
+    for (const index in arr) {
+        div5.innerHTML += `${index}, ${arr[index]} `;
+    }
+
+    div5.innerHTML += '<br><br>';
+
+    for (const value of arr) {
+        div5.innerHTML += `${value} `;
+    }
+
+    div5.innerHTML += '<br><br>';
+
+    for (const key in obj) {
+        div5.innerHTML += `${key}, ${obj[key]} `;
+    }
 }

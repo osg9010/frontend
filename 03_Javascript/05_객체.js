@@ -157,13 +157,21 @@ window.onload = function() {
         this.oracle = oracle;
 
         // 메소드 정의
-        this.getSum = function() {
-            return this.java + this.oracle;
-        };
+        // this.getSum = function() {
+        //     return this.java + this.oracle;
+        // };
 
-        this.getAvg = function() {
-            return this.getSum() / 2;
-        }
+        // this.getAvg = function() {
+        //     return this.getSum() / 2;
+        // }
+    }
+
+    Student.prototype.getSum = function() {
+        return this.java + this.oracle;
+    };
+
+    Student.prototype.getAvg = function() {
+        return this.getSum() / 2;
     }
 
     let btn5 = document.getElementById('btn5');
@@ -186,7 +194,101 @@ window.onload = function() {
         for (const element of students) {
             div5.innerHTML += `이름: ${element.name}, 총점: ${element.getSum()}, 평균: ${element.getAvg()}<br>`;
         }
+
+
     })
+
+    // 6. 캡슐화
+    function IdolGroup(n, m) {
+        let name = n;
+        let members = m;
+
+        this.getGroupName = function() {
+            return name;
+        }
+
+        this.getMembers = function() {
+            return members;
+        }
+
+        this.getMemberCount = function() {
+            return members.length;
+        }
+
+        this.setGroupName = function(n) {
+            name = n;
+        }
+
+        this.setMembers = function(m) {
+            members = m;
+        }
+    }
+
+    let btn6 = document.getElementById('btn6');
+
+    btn6.addEventListener('click', function() {
+        let div6 = document.getElementById('div6');
+
+        let idol = new IdolGroup('BTS', ['정국','진','뷔','슈가','랩몬','제이홉','지민']);
+
+        console.log(idol);
+
+        idol.setGroupName('레드벨벳');
+        idol.setMembers(['슬기', '조이', '웬디', '아이린', '예리']);
+
+        div6.innerHTML = `그룹명: ${idol.getGroupName()}, 멤버: ${idol.getMembers()}, 멤버수: ${idol.getMemberCount()}명`;
+    });
+
+    // 7. Date 객체
+    let btn7 = document.getElementById('btn7');
+
+    btn7.addEventListener('click', function() {
+        let div7 = document.getElementById('div7');
+
+        // Date 객체를 생성하는 방법
+        let date1 = new Date();
+        let date2 = new Date(1655778872064);
+        let date3 = new Date('2022-06-21T20:17:50');
+        let date4 = new Date('2022/06/21 21:23:58');
+        let date5 = new Date(2022, 5, 21, 11, 21, 59); // 월은 0 부터 시작
+
+        div7.innerHTML = `Date 객체<br><br>`;
+        div7.innerHTML += `date1: ${date1}<br>`;
+        div7.innerHTML += `date2: ${date2}<br>`;
+        div7.innerHTML += `date3: ${date3}<br>`;
+        div7.innerHTML += `date3: ${date4}<br>`;
+        div7.innerHTML += `date3: ${date5}<br><br>`;
+        
+        // Date 객체의 메소드 호출
+        div7.innerHTML += `date1.getFullYear(): ${date1.getFullYear()}<br>`;
+        div7.innerHTML += `date1.getMonth(): ${date1.getMonth() + 1}<br>`; // 월은 0부터 시작
+        div7.innerHTML += `date1.getDate(): ${date1.getDate()}<br>`;
+        div7.innerHTML += `date1.getDay(): ${date1.getDay()}<br>`; // 0: 일요일, 6: 토요일
+        div7.innerHTML += `date1.getHours(): ${date1.getHours()}<br>`;
+        div7.innerHTML += `date1.getMinutes(): ${date1.getMinutes()}<br>`;
+        div7.innerHTML += `date1.getSeconds(): ${date1.getSeconds()}<br>`;
+        div7.innerHTML += `date1.getMilliseconds(): ${date1.getMilliseconds()}<br>`;
+        // 1970년 1월 1일 00시를 기준으로 현재 시간에 대한 밀리 세컨드 값을 반환한다.
+        div7.innerHTML += `date1.getTime(): ${date1.getTime()}<br>`;
+        // 표준시와 Date 객체에 지정된 시간과의 차이를 분 단위로 반환한다.
+        div7.innerHTML += `date1.getTimezoneOffset() / 60: ${date1.getTimezoneOffset() / 60}<br>`;
+        div7.innerHTML += `date1.toDateString(): ${date1.toDateString()}<br>`;
+        div7.innerHTML += `date1.toTimeString(): ${date1.toTimeString()}<br>`;
+        div7.innerHTML += `date1.toUTCString(): ${date1.toUTCString()}<br>`;
+        div7.innerHTML += `date1.toISOString(): ${date1.toISOString()}<br>`;
+        div7.innerHTML += `date1.toLocaleString(): ${date1.toLocaleString()}<br>`;
+        div7.innerHTML += `date1.toLocaleDateString(): ${date1.toLocaleDateString()}<br>`;
+        div7.innerHTML += `date1.toLocaleTimeString(): ${date1.toLocaleTimeString()}<br>`;
+        // ISO Language Codes 참고
+        div7.innerHTML += `date1.toLocaleDateString(): ${date1.toLocaleDateString('en-US')}<br>`;
+        div7.innerHTML += `date1.toLocaleTimeString(): ${date1.toLocaleTimeString('en-US')}<br>`;
+        div7.innerHTML += `date1.toLocaleDateString(): ${date1.toLocaleDateString('zh-hk')}<br>`;
+        div7.innerHTML += `date1.toLocaleTimeString(): ${date1.toLocaleTimeString('zh-hk')}<br>`;
+
+    
+    });
+
+
 
 
 }

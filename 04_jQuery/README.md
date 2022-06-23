@@ -13,7 +13,7 @@
   <script src="jquery-3.6.0.js" ></script>
   ```
 ### 3. 제이쿼리 시작
-* 제이쿼리를 사용하려면 $ 또는 jquery 식별자를 통해 제이쿼리에 접근해야 한다.
+* 제이쿼리를 사용하려면 $ 또는 jQuery 식별자를 통해 제이쿼리에 접근해야 한다.
   ```js
   // 기본 작성 형태
   $('선택자').css('속성', '속성값');
@@ -21,6 +21,10 @@
 * 제이쿼리는 ready 메소드를 통해 웹 문서의 모든 요소가 로드 된 후에 실행되어야 한다. (window.onload 속성과 같은 개념)
   ```js
   $(document).ready(function(){
+    // 실행 코드
+  });
+
+  jQuery(document).ready(function(){
     // 실행 코드
   });
   ```

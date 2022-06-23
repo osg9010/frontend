@@ -42,78 +42,96 @@
 			</tr>
 			<tr>
 				<td>
-					<button id="left">(</button>
+					<button id="left" onclick="buttonClick(this.innerHTML);">(</button>
 				</td>
 				<td>
-					<button id="right">)</button>
+					<button id="right" onclick="buttonClick(this.innerHTML);">)</button>
 				</td>
 				<td>
-					<button id="percent">%</button>
+					<button id="percent" onclick="buttonClick(this.innerHTML);">%</button>
 				</td>
 				<td>
-					<button id="clear">AC</button>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<button id="seven">7</button>
-				</td>
-				<td>
-					<button id="eight">8</button>
-				</td>
-				<td>
-					<button id="nine">9</button>
-				</td>
-				<td>
-					<button id="devide">/</button>
+					<button id="clear" onclick="buttonClick(this.innerHTML);">AC</button>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<button id="four">4</button>
+					<button id="seven" onclick="buttonClick(this.innerHTML);">7</button>
 				</td>
 				<td>
-					<button id="five">5</button>
+					<button id="eight" onclick="buttonClick(this.innerHTML);">8</button>
 				</td>
 				<td>
-					<button id="six">6</button>
+					<button id="nine" onclick="buttonClick(this.innerHTML);">9</button>
 				</td>
 				<td>
-					<button id="astric">*</button>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<button id="one">1</button>
-				</td>
-				<td>
-					<button id="two">2</button>
-				</td>
-				<td>
-					<button id="three">3</button>
-				</td>
-				<td>
-					<button id="minus">-</button>
+					<button id="devide" onclick="buttonClick(this.innerHTML);">/</button>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<button id="zero">0</button>
+					<button id="four" onclick="buttonClick(this.innerHTML);">4</button>
 				</td>
 				<td>
-					<button id="dot">.</button>
+					<button id="five" onclick="buttonClick(this.innerHTML);">5</button>
 				</td>
 				<td>
-					<button id="equal">=</button>
+					<button id="six" onclick="buttonClick(this.innerHTML);">6</button>
 				</td>
 				<td>
-					<button id="plus">+</button>
+					<button id="astric" onclick="buttonClick(this.innerHTML);">*</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="one" onclick="buttonClick(this.innerHTML);">1</button>
+				</td>
+				<td>
+					<button id="two" onclick="buttonClick(this.innerHTML);">2</button>
+				</td>
+				<td>
+					<button id="three" onclick="buttonClick(this.innerHTML);">3</button>
+				</td>
+				<td>
+					<button id="minus" onclick="buttonClick(this.innerHTML);">-</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="zero" onclick="buttonClick(this.innerHTML);">0</button>
+				</td>
+				<td>
+					<button id="dot" onclick="buttonClick(this.innerHTML);">.</button>
+				</td>
+				<td>
+					<button id="equal" onclick="buttonClick(this.innerHTML);">=</button>
+				</td>
+				<td>
+					<button id="plus" onclick="buttonClick(this.innerHTML);">+</button>
 				</td>
 			</tr>
 		</table>
 	</div>
 	<script>
-		// 자바스크립트 작성
+		let result = document.getElementById("result");
+			
+		function buttonClick(button){
+				
+			if(button == 'AC') {
+				result.innerHTML = 0;
+			} else if(button == '=') {
+				result.innerHTML = eval(result.innerHTML);
+
+			} else {
+				let str = button;
+				
+				if(result.innerHTML == '0'){
+					result.innerHTML = str;
+				}else{
+					result.innerHTML += str;
+				}
+			}
+		}
 	</script>
 </body>
 </html>

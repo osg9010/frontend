@@ -33,11 +33,35 @@
 
     <br>
 
-    <button>입력</button>
-    <button>출력</button>
+    <button onclick="addMember();">입력</button>
+    <button onclick="printMember();">출력</button>
 
     <script>
-        // 자바스크립트 코드 작성
+        let member;
+        
+        function addMember() {
+            const name = prompt("이름 입력 :");
+            const age = prompt("나이 입력 :");
+            const addr = prompt("주소 입력 :");
+
+            member = {
+                name, age, addr,
+                toString: function() {
+                    return `이름 : ${this.name} <br>나이 : ${this.age}<br>주소 : ${this.addr}<br>`;
+                }
+            }
+
+            console.log(member.toString());
+        }
+
+        function printMember() {
+            if(member === null || member === undefined) {
+                alert("입력을 먼저 진행해주세요.");
+            } else {
+                //TODO 각각의 값들이 모두 입력됬는지 체크하는 로직도 넣자~!
+                document.getElementById("print").innerHTML = member;
+            }
+        }
     </script>
     <hr>
 
@@ -71,11 +95,38 @@
             </tr>
         </table>
         <label>학생 정보 테이블</label><br>
-        <button>입력 및 출력</button>
+        <button onclick="addStudent();">입력 및 출력</button>
     </div>
 
     <script>
-        // 자바스크립트 코드 작성
+        function Student(name, age, addr) {
+            this.name = name;
+            this.age = age;
+            this.addr = addr;
+        }
+
+        function addStudent() {
+            let objectArr = [];
+            let nameTableData = document.getElementsByClassName("name");
+            let ageTableData = document.getElementsByClassName("age");
+            let addrTableData = document.getElementsByClassName("addr");
+
+            for (let i = 0; i < 3; i++) {
+                let name = prompt((i + 1) + "번째 학생 이름 입력");
+                let age = prompt((i + 1) + "번째 학생 나이 입력");
+                let addr = prompt((i + 1) + "번째 학생 주소 입력");
+
+                objectArr.push(new Student(name, age, addr));          
+            }
+
+            console.log(objectArr)
+
+            for (let i = 0; i < 3; i++) {
+                nameTableData[i].innerHTML = objectArr[i].name;  
+                ageTableData[i].innerHTML = objectArr[i].age;  
+                addrTableData[i].innerHTML = objectArr[i].addr;  
+            }
+        }
     </script>
 </body>
 </html>

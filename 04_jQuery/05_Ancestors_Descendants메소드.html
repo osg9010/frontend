@@ -59,8 +59,27 @@
             // // span 태그부터 div 태그 이전까지 상위 요소에 스타일 적용
             // $('span').parentsUntil('div').css('background-color', 'lightgreen');
 
+            // 2. Descendants 메소드
+            let style1 = {'color':'red', 'border': '2px solid'};
+            let style2 = {'color':'blue', 'border': '2px solid'};
+            let style3 = {'color':'green', 'border': '2px solid'};
+            let style4 = {'color':'purple', 'border': '2px solid'};
+            let style5 = {'color':'yellow', 'border': '2px solid'};
 
-            
+            // 클래스 속성값이 wrap인 요소의 자식 요소들에 스타일 적용
+            $('.wrap').children().css(style1);
+
+            // 클래스 속성값이 wrap인 요소의 자식의 자식 요소들에 스타일 적용
+            $('.wrap').children().children().css(style2);
+
+            // 클래스 속성값이 wrap인 요소의 자식의 자식 요소 중 ul 태그(요소)의 스타일 적용
+            $('.wrap').children().children('ul').css(style3);
+
+            // 클래스 속성값이 wrap인 요소의 모든 하위 요소 중 li 태그(요소)의 스타일 적용
+            $('.wrap').children().children().children('li').css(style5)
+
+            // 클래스 속성값이 wrap인 요소의 모든 하위 요소 중 span 태그(요소)의 스타일 적용
+            $('.wrap').find('span').css(style4);
         });
     </script>
 </body>
